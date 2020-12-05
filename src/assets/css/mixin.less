@@ -1,0 +1,23 @@
+//横向
+.mixin-flex-row{
+  display: flex;
+  flex-direction: row;
+}
+//竖向
+.mixin-flex-column{
+  display: flex;
+  flex-direction: column;
+}
+.mixin-border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+.mixin-border(@radius) {
+  border: @px @type @color;
+}
+.mixin-bg-cover{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}

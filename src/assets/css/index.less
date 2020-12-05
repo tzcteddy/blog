@@ -1,0 +1,156 @@
+@import './transition.less';
+@import './variable.less';
+@import './mixin.less';
+html,body{
+  width: 100%;
+  height: 100%;
+  color: @color-font-level1;
+}
+.content{
+  width: 100%;
+}
+.main{
+  margin: auto;
+  width: 100%;
+  max-width: 750px;
+}
+img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.img-contain{
+  object-position: center;
+  object-fit: contain;
+}
+.img-cover{
+  object-position: center;
+  object-fit: cover;
+}
+/****外边距****/
+.set-m(5);
+.set-m(@min) when (@min=<30){
+    .m@{min}{
+        margin: @min*1px;
+    }
+    .set-m(@min+5)
+}
+/****下外边距****/
+.set-mb(5);
+.set-mb(@min) when (@min=<30){
+    .mb@{min}{
+        margin-bottom: @min*1px;
+    }
+    .set-mb(@min+5)
+}
+/****内边距****/
+.set-p(5);
+.set-p(@min) when (@min=<30){
+    .p@{min}{
+        padding: @min*1px;
+    }
+    .set-p(@min+5)
+}
+/****盒子属性****/
+.block{
+  display: block;
+}
+.inline-block{
+  display: inline-block;
+}
+.hide{
+  display: none;
+}
+.p-center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.f-r-center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.f-c-center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card-box{
+  padding: 20px 10px;
+  display: inline-block;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0px 1px 20px -6px @color-font-level1;
+}
+.card-box-b{
+  padding: 20px 10px;
+  display: block;
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: -1px 5px 18px -12px @color-font-level1;
+}
+/***查看更多*****/
+.look-more{
+  color: @color-level1;
+  cursor: pointer;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.tal{
+  text-align: left;
+}
+.tar{
+  text-align: right;
+}
+.tac{
+  text-align: center;
+}
+.f12{
+  font-size: 12px;
+}
+.f14{
+  font-size: 14px;
+}
+.f18{
+  font-size: 16px;
+}
+.f26{
+  font-size: 26px;
+}
+.f32{
+  font-size: 32px;
+}
+.fcw{
+  color: white;
+}
+.fcd{
+  color: @color-font-level1;
+}
+.fcl{
+  color: @color-level2;
+}
+.fcv{
+  color: @color-font-level2;
+}
+
+.p-fixed{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+
+
+
+

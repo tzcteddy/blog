@@ -1,0 +1,9 @@
+module.exports={
+  data:{
+    avatar:'',
+    userName:'',
+    descript:''
+  },
+  code:200,
+  msg:'操作成功'
+}
