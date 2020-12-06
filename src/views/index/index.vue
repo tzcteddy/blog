@@ -1,5 +1,5 @@
 <template>
-  <div class="main-screen desktop" :style="{'backgroundImage':style.background}">
+  <div class="main-screen desktop" :style="{'backgroundImage' : background}">
       <div class="desk-container">
         <header>
         <BlockImgBg :scale="0" >
@@ -48,26 +48,37 @@
   </div>
 </template>
 
-<script>
-  import {ref} from 'vue';
-    import BlockImgBg from '../../components/BlockImgBg'
-  import BlockUser from '../../components/BlockUser'
-  import SlideList from '../../components/SlideList'
-  import MarkdownList from '../../components/MarkdownList'
-  import NavBar from '../../components/NavBar'
+<script lang="ts">
+  interface DataStyle {
+    background: string;
+  }
+  import {ref,reactive,toRefs,onMounted,watch} from 'vue';
+  import BlockImgBg from '../../components/BlockImgBg.vue'
+  import BlockUser from '../../components/BlockUser.vue'
+  import SlideList from '../../components/SlideList.vue'
+  import MarkdownList from '../../components/MarkdownList.vue'
+  import NavBar from '../../components/NavBar.vue'
   export default {
-    name:'index',
+    name : 'index',
     data () {
       return {
 
       };
     },
     setup(){
-      const style=ref({
-        background:'url(https://up.enterdesk.com/edpic/30/df/67/30df67370f38e85a044bf1e6f8b63cb0.jpg)'
+      const styleData: DataStyle = reactive({
+        background : 'url(https://up.enterdesk.com/edpic/30/df/67/30df67370f38e85a044bf1e6f8b63cb0.jpg)'
+      });
+      
+      onMounted(() => {
+        console.log(styleData)
       })
+      watch([()=>styleData.background],(newValue,oldValue)=>{
+          console.log(newValue,oldValue)
+      })
+      const style=toRefs(styleData);
       return {
-        style
+        ...style
       }
     },
  

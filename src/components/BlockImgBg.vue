@@ -6,8 +6,8 @@
   </a>
 </template>
 
-<script>
-  import { computed} from 'vue'
+<script lang="ts">
+  import { computed, Prop} from 'vue'
   export default {
     name:'BlockImgBg',
     props:{
