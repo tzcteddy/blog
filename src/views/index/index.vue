@@ -5,6 +5,7 @@
         <BlockImgBg :scale="0" >
         <div class="p10 f-c-center" >
           <BlockUser/>
+          <p>x:{{x}},y:{{y}}</p>
         </div>
         </BlockImgBg>
     </header>
@@ -52,7 +53,8 @@
   interface DataStyle {
     background: string;
   }
-  import {ref,reactive,toRefs,onMounted,watch} from 'vue';
+  import useMousePosition from '../../hooks/useMousePosition'
+  import {reactive,toRefs,onMounted,watch} from 'vue';
   import BlockImgBg from '../../components/BlockImgBg.vue'
   import BlockUser from '../../components/BlockUser.vue'
   import SlideList from '../../components/SlideList.vue'
@@ -76,9 +78,11 @@
       watch([()=>styleData.background],(newValue,oldValue)=>{
           console.log(newValue,oldValue)
       })
+      const {x,y}=useMousePosition()
       const style=toRefs(styleData);
       return {
-        ...style
+        ...style,
+        x,y
       }
     },
  

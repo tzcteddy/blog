@@ -7,7 +7,10 @@
 </template>
 
 <script lang="ts">
-  import { computed, Prop} from 'vue'
+  import { computed } from 'vue'
+  interface Data {
+  [key: string]: any;
+}
   export default {
     name:'BlockImgBg',
     props:{
@@ -33,7 +36,7 @@
         
       };
     },
-    setup(props){
+    setup(props: Data){
       const paddingTop=computed(()=>{return props.scale*100+'%'})
       return {
         paddingTop
