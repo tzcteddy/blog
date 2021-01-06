@@ -3,13 +3,25 @@ module.exports={
     topBgImage:'',
     recommendList:[
       {
-        bgImage:'',
-        title:'',
+        bgImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+        title:'推荐社区',
         list:[
           {
             image:'',
-            title:'',
-            link:''
+            title:'美团前端',
+            link:'https://tech.meituan.com/tags/%E5%89%8D%E7%AB%AF.html'
+          },{
+            image:'',
+            title:'凹凸实验室',
+            link:'https://aotu.io/'
+          },{
+            image:'',
+            title:'淘宝前端',
+            link:'https://fed.taobao.org/'
+          },{
+            image:'',
+            title:'腾讯IM团队',
+            link:'https://imweb.io/'
           }
         ]
       }
@@ -23,12 +35,12 @@ module.exports={
     ],
     articleList:[
       {
-        image:'',
-        id:'',
+        image:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+        id:1,
         type:'',
-        title:'',
-        content:'',
-        createTime:''
+        title:'Vue源码分析',
+        content:'vue3出来了，vue2学会了吗？',
+        createTime:'2020-01-01 12:00:00'
       }
     ]
   },

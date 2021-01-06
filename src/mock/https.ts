@@ -14,11 +14,11 @@ http.createServer((req:Request, res:Request) => {
     'Access-Control-Allow-Credentials': true,
     'Cache-Control': 'no-cache,no-store', // clear cache
   })
-  console.log(req.addListener)
   if (req.method === 'OPTIONS') {
     res.end(null)
   }
   if (req.method === 'POST') {
+    console.log(req.url)
     let postData = ''
     req.addListener('data',(dataBuffer:any): any=>{
       return postData += dataBuffer
@@ -28,8 +28,8 @@ http.createServer((req:Request, res:Request) => {
       // console.log(2,postData)
       // postData = JSON.parse(postData)
       const originData = _map[req.url]
-        ? Mock.mock(_map[req.url])
-        : ''
+        // ? Mock.mock(_map[req.url])
+        // : ''
       // const data = typeof (_filter[req.url]) === 'function'
       //   ? _filter[req.url](originData, postData)
       //   : originData

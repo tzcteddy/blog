@@ -1,6 +1,6 @@
 <template>
   <div class="MarkdownList">
-      <div class="pic"><BlockImgBg :scale="1/2" url="//wx4.sinaimg.cn/mw690/6c009866ly1gl9vgsjzroj20m80vrnb9.jpg"/></div>
+      <div class="pic"><BlockImgBg :scale="1/2" url="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg"/></div>
       <div class="ctn">
          <div>
             <h2>Vue源码分析</h2>
@@ -47,6 +47,7 @@
   }
   .ctn{
     width: 100%;
+    height: 77.42px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

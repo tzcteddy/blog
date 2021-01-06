@@ -53,6 +53,7 @@
   interface DataStyle {
     background: string;
   }
+  import axios from 'axios';
   import useMousePosition from '../../hooks/useMousePosition'
   import {reactive,toRefs,onMounted,watch} from 'vue';
   import BlockImgBg from '../../components/BlockImgBg.vue'
@@ -68,6 +69,7 @@
       };
     },
     setup(){
+      axios.post('http://localhost:1111/mock/web/home').then(res=>{console.log(res.data.data)})
       const styleData: DataStyle = reactive({
         background : 'url(https://up.enterdesk.com/edpic/30/df/67/30df67370f38e85a044bf1e6f8b63cb0.jpg)'
       });
@@ -101,6 +103,6 @@
 .desktop{
   background-position: center center;
   background-repeat: no-repeat;
-  background-size:100% 100%;
+  background-size:cover;
 }
 </style>
