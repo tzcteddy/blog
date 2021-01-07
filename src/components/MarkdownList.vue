@@ -1,12 +1,12 @@
 <template>
   <div class="MarkdownList">
-      <div class="pic"><BlockImgBg :scale="1/2" url="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg"/></div>
+      <div class="pic"><BlockImgBg :scale="1/2" :url="art.imageUrl"/></div>
       <div class="ctn">
          <div>
-            <h2>Vue源码分析</h2>
-            <p>vue3出来了，vue2学会了吗？</p>
+            <h2>{{art.title}}</h2>
+            <p>{{art.content}}</p>
          </div>
-         <div class="fcv f12">发表时间:2020-01-01 12:00:00</div>
+         <div class="fcv f12">发表时间:{{art.createTime}}</div>
       </div>
   </div>
 </template>
@@ -15,7 +15,13 @@
   import BlockImgBg from './BlockImgBg'
   export default {
     name:'',
-    props:[''],
+    props:{
+      art:{
+        type:Object,
+        required:true,
+        default:null
+      }
+    },
     data () {
       return {
 

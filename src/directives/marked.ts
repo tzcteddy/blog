@@ -2,6 +2,7 @@ import  marked from 'marked'
 import hljs from 'highlight.js'
 import javascript from 'highlight.js/lib/languages/javascript'
 import 'highlight.js/styles/dark.css'
+import 'highlight.js/styles/github.css';
 import Zoom from '../lib/zoom'
 import { DirectiveHook } from 'vue'
 

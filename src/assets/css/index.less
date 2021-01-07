@@ -18,6 +18,34 @@ html,body{
   max-height: 100%;
   overflow-y: auto;
 }
+.scroll-y{
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    width: 6px;
+    background: rgba(#101F1C, 0.1);
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(#101F1C, 0.5);
+    background-clip: padding-box;
+    min-height: 28px;
+    -webkit-border-radius: 2em;
+    -moz-border-radius: 2em;
+    border-radius: 2em;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(#101F1C, 1);
+  }
+}
 .main{
   margin: auto;
   width: 100%;
@@ -35,6 +63,13 @@ img{
 .img-cover{
   object-position: center;
   object-fit: cover;
+}
+.set-w(10);
+.set-w(@min) when (@min=<100){
+  .w@{min}{
+    width: @min*1%;
+  }
+  .set-w(@min+10)
 }
 /****外边距****/
 .set-m(5);

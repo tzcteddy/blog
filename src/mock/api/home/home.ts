@@ -1,31 +1,75 @@
+import {RecommendProps,ArtItemProps} from '../../types'
+const recommendList:RecommendProps[]=   [{
+  bgImageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+  title:'推荐社区',
+  list:[
+    {
+      imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+      title:'美团前端',
+      link:'https://tech.meituan.com/tags/%E5%89%8D%E7%AB%AF.html'
+    },{
+      imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+      title:'凹凸实验室',
+      link:'https://aotu.io/'
+    },{
+      imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+      title:'淘宝前端',
+      link:'https://fed.taobao.org/'
+    },{
+      imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+      title:'腾讯IM团队',
+      link:'https://imweb.io/'
+    },{
+      imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+      title:'腾讯alloyteam',
+      link:'http://www.alloyteam.com/page/0/'
+    }
+  ]
+},{
+  bgImageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1610627843&di=6c598488accf736f3ef8e45a20d22480&imgtype=jpg&src=http%3A%2F%2Fimg6.bdstatic.com%2Fimg%2Fimage%2Fpublic%2Fhelian.jpg',
+  title:'推荐工具',
+  list:[
+    {
+      imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+      title:'数学公式编辑器',
+      link:'http://www.wiris.com/editor/demo/en/developers#mathml-latex'
+    },{
+      imageUrl:'https://mengshukeji.gitee.io/luckysheetdocs/img/LuckysheetDemo.gif',
+      title:'在线表格',
+      link:'https://mengshukeji.gitee.io/luckysheetdocs/zh/'
+    },{
+      imageUrl:'https://lea.verou.me/wp-content/uploads/2011/09/Screen-shot-2011-09-14-at-10.33.11--300x204.png',
+      title:'贝塞尔曲线',
+      link:'https://cubic-bezier.com/#.17,.67,.83,.67'
+    },{
+      imageUrl:'https://ckeditor.com/assets/images/composition/ckeditor-5/multiple-purposes-0307420f72.png',
+      title:'文本编辑器',
+      link:'https://ckeditor.com/ckeditor-5/'
+    }
+  ]
+}] 
+const articleList:ArtItemProps[]=[
+  {
+    imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+    id:1,
+    type:[],
+    title:'Vue源码分析',
+    content:'vue3出来了，vue2学会了吗？',
+    createTime:'2020-01-01 12:00:00'
+  },
+  {
+    imageUrl:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
+    id:2,
+    type:[],
+    title:'详解reactive响应式原理',
+    content:'',
+    createTime:'2020-01-01 12:00:00'
+  }
+]
 module.exports={
   data:{
-    topBgImage:'',
-    recommendList:[
-      {
-        bgImage:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
-        title:'推荐社区',
-        list:[
-          {
-            image:'',
-            title:'美团前端',
-            link:'https://tech.meituan.com/tags/%E5%89%8D%E7%AB%AF.html'
-          },{
-            image:'',
-            title:'凹凸实验室',
-            link:'https://aotu.io/'
-          },{
-            image:'',
-            title:'淘宝前端',
-            link:'https://fed.taobao.org/'
-          },{
-            image:'',
-            title:'腾讯IM团队',
-            link:'https://imweb.io/'
-          }
-        ]
-      }
-    ],
+    topBgImageUrl:'',
+    recommendList,
     navBarList:[
       {
         id:'',
@@ -33,16 +77,7 @@ module.exports={
         code:''
       }
     ],
-    articleList:[
-      {
-        image:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg',
-        id:1,
-        type:'',
-        title:'Vue源码分析',
-        content:'vue3出来了，vue2学会了吗？',
-        createTime:'2020-01-01 12:00:00'
-      }
-    ]
+    articleList
   },
   code:200,
   msg:'操作成功'

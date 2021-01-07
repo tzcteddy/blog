@@ -22,7 +22,7 @@
             <div class="f-r-center p10">
               <div class="card-box main">
               <h3 class="tac p10 ">推荐社区</h3>
-              <SlideList/></div>
+              <RecommendList/></div>
             </div>
           </BlockImgBg>
           <!-- //wx4.sinaimg.cn/mw690/6c009866ly1gl9vgsjzroj20m80vrnb9.jpg -->
@@ -30,14 +30,14 @@
             <div class="f-r-center p10">
               <div class="card-box main">
               <h3 class="tac p10 " @click="openModule">推荐工具</h3>
-              <SlideList/></div>
+              <RecommendList/></div>
             </div>
           </BlockImgBg>
           <BlockImgBg :scale='0' url="" v-if="false">
             <div class="f-r-center p10">
               <div class="card-box main">
               <h3 class="tac p10 " >推荐工具</h3>
-              <SlideList/></div>
+              <RecommendList/></div>
             </div>
           </BlockImgBg>
           <div class="main "><NavBar/></div>
@@ -60,7 +60,7 @@ import {ref, watch} from 'vue'
 import axios from 'axios';
   import BlockImgBg from '../../components/BlockImgBg.vue'
   import BlockUser from '../../components/BlockUser.vue'
-  import SlideList from '../../components/SlideList.vue'
+  import RecommendList from '../../components/RecommendList.vue'
   import MarkdownList from '../../components/MarkdownList.vue'
   import NavBar from '../../components/NavBar.vue'
   import useUrlLoader from '../../hooks/useUrlLoader'
@@ -78,7 +78,7 @@ import axios from 'axios';
 
       };
     },
-    components: {BlockUser,BlockImgBg,SlideList,MarkdownList,NavBar,Module,AsyncShow},
+    components: {BlockUser,BlockImgBg,RecommendList,MarkdownList,NavBar,Module,AsyncShow},
     setup(){
       axios.post('http://localhost:1111/mock/web/home').then(res=>{console.log(res)})
       const {result,loading,loaded,error} = useUrlLoader<ResultData>()
