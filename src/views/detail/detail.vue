@@ -1,7 +1,7 @@
 <template>
   <div class="main-screen desktop">
       <div class="main desk-container scroll-y p10">
-        <BlockImgBg :scale="1/4" url="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1607180904300&di=5a4e10ab0f10d96102ac194f731c1e8f&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F9%2F589c327ec723e.jpg"/>
+        <BlockImgBg :scale="1/4" :url="image"/>
         <article>
           <MarkdownArt :md="body"/>
         </article>
@@ -11,9 +11,10 @@
 
 <script>
 import {reactive,toRefs,onMounted,watch, ref} from 'vue';
+import { useRoute } from 'vue-router'
 import BlockImgBg from '../../components/BlockImgBg.vue'
 import MarkdownArt from '../../components/MarkdownArt.vue'
-import bodyData from '../../mock/api/detail/body'
+import {getDetail} from '@/http/api'
   export default {
     name:'',
     props:[''],
@@ -24,8 +25,18 @@ import bodyData from '../../mock/api/detail/body'
     },
     setup(){
       const body=ref('');
-      body.value=bodyData.body
+      const image=ref('');
+      const route=useRoute()
+      const id=route.params.id
+      onMounted(async ()=>{
+        const detail=await getDetail({id})
+        console.log(detail)
+        body.value=detail.data.data.body
+        image.value=detail.data.data.image
+      })
+      
       return {
+        image,
         body
       }
     },

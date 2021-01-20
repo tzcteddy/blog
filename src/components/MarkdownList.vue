@@ -1,12 +1,12 @@
 <template>
   <div class="MarkdownList">
-      <div class="pic"><BlockImgBg :scale="1/2" :url="art.imageUrl"/></div>
+      <div class="pic"><BlockImgBg :scale="1/2" :url="art.image"/></div>
       <div class="ctn">
-         <div>
+         <div class="fcd">
             <h2>{{art.title}}</h2>
-            <p>{{art.content}}</p>
+            <p>{{art.intro}}</p>
          </div>
-         <div class="fcv f12">发表时间:{{art.createTime}}</div>
+         <div class="fcv f12">发表时间:{{art.cTime}}</div>
       </div>
   </div>
 </template>

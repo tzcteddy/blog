@@ -2,34 +2,29 @@
   <div class="NavBar">
      <div class="nav-wrap">
        <ul class="inline-block">
-        <li class="nav-active">推荐</li>
-        <li>js</li>
-        <li>node</li>
-        <li>vue</li>
-        <li>webpack</li>
-        <li>ts</li>
-        <li>微信</li>
-        <li>移动</li>
+        <li class="click" :class="{'nav-active':type.id==curTypeId}" @click="changeType(type.id)" v-for="type in articleTypeOptions" :key="type.id">{{type.name}}</li>
      </ul>
      </div>
   </div>
 </template>
 
 <script>
-
+  import {reactive,toRefs,ref} from 'vue'
+  import {articleTypeOptions} from '@/lib/config'
   export default {
     name:'',
-    props:[''],
-    data () {
+    setup(){
+      const curTypeId=ref("1")
+      const options=reactive({articleTypeOptions});
+      const changeType=(id)=>{
+          curTypeId.value=id
+      }
       return {
-
-      };
+        curTypeId,
+        changeType,
+        ...toRefs(options)
+      }
     },
-
-    components: {},
-
-    computed: {},
-
     methods: {},
 
     watch: {}

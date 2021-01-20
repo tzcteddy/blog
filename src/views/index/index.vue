@@ -19,10 +19,10 @@
               <RecommendList :list="recommend.list"/></div>
             </div>
           </BlockImgBg>
-          <div class="main "><NavBar/></div>
+          <div class="main "><NavBar @change="changeType"/></div>
           <BlockImgBg :scale='0' >
             <ul class="p10 ">
-              <router-link class="card-box-b main mb10" tag="li" v-for="(art,index) in articleList" :key="index" :to="`/detail/${art.id}`">
+              <router-link class="card-box-b main mb10" tag="li" v-for="(art,index) in articleList" :key="index" :to="`/detail/${art._id}`">
                 <MarkdownList :art="art"/>
               </router-link>
           </ul>
@@ -36,7 +36,7 @@
 <script lang="ts">
 
   import {RecommendProps,ArtItemProps} from '../../mock/types'
-  import {getHome} from '../../http/api'
+  import {getArticle} from '../../http/api'
   import useMousePosition from '../../hooks/useMousePosition'
   import {reactive,toRefs,onMounted,watch} from 'vue';
   import BlockImgBg from '../../components/BlockImgBg.vue'
@@ -56,21 +56,25 @@
     name : 'index',
     data () {
       return {
+        pagesParam: { total: 0, pageSize: 50, pageNum: 1 }
       };
     },
     setup(){
-     const homeData: HomeData=reactive({recommendList : [],articleList:[]})
+      const homeData: HomeData=reactive({recommendList : [],articleList:[]})
       const styleData: DataStyle = reactive({
         background : 'url(https://up.enterdesk.com/edpic/30/df/67/30df67370f38e85a044bf1e6f8b63cb0.jpg)'
       });
+      const changeType=async (id: string)=>{
+        const result=await getArticle({typeId:id,})
+        homeData.articleList=result.data.list
+      }
       watch([()=>styleData.background],(newValue,oldValue)=>{
           console.log(newValue,oldValue)
       })
      
       onMounted(async() => {
-        const result=await getHome()
-        homeData.recommendList=result.data.data.recommendList
-        homeData.articleList=result.data.data.articleList
+        const result=await getArticle({})
+        homeData.articleList=result.data.data.list
       })
       
       const {x,y}=useMousePosition()
@@ -78,6 +82,7 @@
       return {
         ...style,
         x,y,
+        changeType,
         ...toRefs(homeData)
       }
     },
